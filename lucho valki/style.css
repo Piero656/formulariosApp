@@ -1,0 +1,147 @@
+                    * {
+                        box-sizing: border-box;
+                        margin: 0;
+                        padding: 0;
+                    }
+                    
+                    body {
+                        font-family: 'Oswald', sans-serif;
+                        background-color: #e3dbef;
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23b2a7c4' fill-opacity='0.4' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+                    }
+                    
+                    .logo {
+                        width: 90px;
+                        height: 70px;
+                        padding-left: 20px;
+                    }
+                    
+                    .navegacion {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        height: 60px;
+                        padding: 20px;
+                        margin-bottom: 10px;
+                    }
+                    
+                    .barra {
+                        width: 90%;
+                        display: flex;
+                    }
+                    
+                    .barra li {
+                        padding: 15px;
+                    }
+                    
+                    ul {
+                        list-style: none;
+                    }
+                    
+                    a {
+                        text-decoration: none;
+                        font-size: 20px;
+                        color: black;
+                    }
+                    
+                    a:hover {
+                        border-bottom: solid 2.5px black;
+                    }
+                    
+                    .main {
+                        background: url("https://www.maquinariadeportiva.com/blog/wp-content/uploads/2015/12/alyvesat-quienes-somos.jpg") no-repeat center center/cover;
+                        width: 100%;
+                        height: 600px;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        justify-content: flex-end;
+                        margin-top: 15px;
+                        margin-bottom: 10px;
+                    }
+                    
+                    .main h1,
+                    .main a {
+                        margin-bottom: 10px;
+                    }
+                    
+                    .prototipos {
+                        background: url("https://noticiasdelaciencia.com/upload/images/09_2021/6419_brazo-bionico-revolucionario.jpg") no-repeat center center/cover;
+                        width: 300px;
+                        height: 300px;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        justify-content: center;
+                    }
+                    
+                    .sillas {
+                        width: 300px;
+                        height: 300px;
+                        background: url("https://m.media-amazon.com/images/I/61dXYff6GAL._AC_SX466_.jpg") no-repeat center center/cover;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        justify-content: center;
+                    }
+                    
+                    .muletas {
+                        width: 300px;
+                        height: 300px;
+                        background: url("https://http2.mlstatic.com/D_NQ_NP_821841-MPE31254028632_062019-O.jpg") no-repeat center center/cover;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        justify-content: center;
+                    }
+                    
+                    .categorias {
+                        display: flex;
+                        justify-content: space-between;
+                        height: 350px;
+                        margin: 0 auto;
+                        width: 90%;
+                    }
+                    
+                    .categorias a {
+                        color: blue;
+                        font-size: 25px;
+                    }
+                    
+                    .categorias a:hover {
+                        border-bottom: 2px solid blue;
+                    }
+                    
+                    main h1 {
+                        font-size: 45px;
+                        align-items: center;
+                        display: flex;
+                        justify-content: center;
+                        margin: 10px;
+                    }
+                    
+                    .sillas:hover,
+                    .prototipos:hover,
+                    .muletas:hover {
+                        cursor: pointer;
+                        opacity: 0.75;
+                    }
+                    
+                    .reseñas {
+                        width: 100%;
+                        height: 250px;
+                        display: grid;
+                        grid-template-columns: 1fr 1fr 1fr 1fr;
+                        gap: 10px;
+                        margin: 10px;
+                    }
+                    
+                    .reseñas div {
+                        width: 100%;
+                        border-style: double;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 10px;
+                    }
