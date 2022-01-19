@@ -15,7 +15,7 @@
                         placeholder="Nombre de usuario">
                     <span class="form-text text-danger"
                             *ngIf="campoNoValido('nombre')">
-                        Debe de ser en formato de nombre y apellido 
+                        {{NombreErrorMsg}}
                     </span>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                         placeholder="Nombre De Usuario">
                     <span class="form-text text-danger"
                         *ngIf="campoNoValido('username')">
-                            El username no puede ser Strider
+                            {{userNameErrorMsg}}
                     </span>
 
                 </div>

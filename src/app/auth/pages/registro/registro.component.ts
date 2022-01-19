@@ -4,6 +4,7 @@ import { emailPattern, nombreApellidoPattern } from 'src/app/shared/validator/va
 import { noPuedeSerStrider } from '../../../shared/validator/validaciones';
 import { ValidatorService } from '../../../shared/validator/validator.service';
 import { EmailValidatorService } from '../../../shared/validator/email-validator.service';
+import { UserNameValidatorService } from 'src/app/shared/validator/username-validator.service';
 
 @Component({
   selector: 'app-registro',
@@ -33,10 +34,41 @@ export class RegistroComponent implements OnInit {
     return '';
   }
 
+
+  get NombreErrorMsg () :string {
+    
+    const errors = this.miFormulario.get('nombre')?.errors;
+    if(errors?.required){
+      return 'El nombre es obligatorio';
+    }
+    if(errors?.pattern){
+      return 'El nombre no cumple con el formato (Nombre Apellido)';
+    }
+
+    return '';
+  }
+
+
+  get userNameErrorMsg () :string {
+    
+    const errors = this.miFormulario.get('username')?.errors;
+    if(errors?.required){
+      return 'El username es obligatorio';
+    }
+    if(errors?.userNameTomado){
+      return 'El usuario ingresado ya está registrado';
+    }
+    if(errors?.noStrider){
+      return 'El usuario no pueder ser "Strider"';
+    }
+
+    return '';
+  }
+
   miFormulario: FormGroup = this.formBuilder.group({
     nombre: ['', [Validators.required, Validators.pattern(this.validatorService.nombreApellidoPattern)]],
     email: ['', [Validators.required, Validators.pattern(this.validatorService.emailPattern)], [this.emailValidator]],
-    username: ['', [Validators.required, this.validatorService.noPuedeSerStrider]],
+    username: ['', [Validators.required, this.validatorService.noPuedeSerStrider], [this.userValidator] ],
     password: ['', [Validators.required, Validators.minLength(6)]],
     password2: ['', [Validators.required, ]],
 
@@ -47,7 +79,8 @@ export class RegistroComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private validatorService: ValidatorService,
-    private emailValidator:EmailValidatorService
+    private emailValidator:EmailValidatorService,
+    private userValidator:UserNameValidatorService
   ) { }
 
   ngOnInit(): void {
